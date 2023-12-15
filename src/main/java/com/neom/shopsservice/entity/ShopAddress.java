@@ -1,9 +1,6 @@
 package com.neom.shopsservice.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -20,4 +17,12 @@ public class ShopAddress {
     private String postalCode;
     private double longitude;
     private double latitude;
+
+    @Version
+    private Long version;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "shop_id")
+    private Shop shop;
+
 }

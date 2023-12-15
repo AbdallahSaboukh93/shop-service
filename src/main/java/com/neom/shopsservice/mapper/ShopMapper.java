@@ -26,4 +26,7 @@ public interface ShopMapper {
     ShopAddressResponse mapToShopAddressResponse(ShopAddress shopAddress);
     @Named("mapToShopAddress")
     ShopAddress mapToShopAddress(ShopAddressRequest shopAddressRequest);
+
+    ShopAddressResponse mapToShopAddressResponseversion(ShopAddress shopAddress);
+
 }
